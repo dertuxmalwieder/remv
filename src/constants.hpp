@@ -14,6 +14,9 @@
 
 // remv version (tries to follow the SemVer recommendations).
 // history:
+//   1.3.1  {2019-09-26]
+//          checking for "-" in argv, just in case...
+//
 //   1.3.0  [2019-01-14]
 //          the -r flag now won't try to rename directories unless -d is
 //          specified as well
@@ -45,7 +48,7 @@
 //          initial release
 
 
-const std::string VERSION = "1.3.0";
+const std::string VERSION = "1.3.1";
 
 
 #endif

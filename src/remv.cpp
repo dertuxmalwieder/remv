@@ -53,7 +53,7 @@ int main(int argc, char** argv) {
     FileStats results;
     
     // Look which options the argv[1] has for us ...
-    if (argc > 2) {
+    if (argc > 2 && argv[1][0] == '-') {
         for (size_t i = 1; i < strlen(argv[1]); i++) {
             if (argv[1][i] == 'E') {
                 // Found "E".

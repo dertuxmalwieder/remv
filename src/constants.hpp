@@ -14,7 +14,7 @@
 
 // remv version (tries to follow the SemVer recommendations).
 // history:
-//   1.3.1  {2019-09-26]
+//   1.3.1  [2019-09-26]
 //          checking for "-" in argv, just in case...
 //
 //   1.3.0  [2019-01-14]

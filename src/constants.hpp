@@ -2,8 +2,8 @@
  * regex move: constants.
  *
  * This work is free. You can redistribute it and/or modify it under the
- * terms of the Do What The Fuck You Want To Public License, Version 2,
- * as published by Sam Hocevar. See the COPYING file for more details.
+ * terms of the MIT No Attribution license. See the COPYING file for more
+ * details.
  */
 
 
@@ -14,6 +14,9 @@
 
 // remv version (tries to follow the SemVer recommendations).
 // history:
+//   1.4.0  [2020-10-28]
+//          relicensed as MIT-0 for the No Warranty clause
+//
 //   1.3.1  [2019-09-26]
 //          checking for "-" in argv, just in case...
 //
@@ -48,7 +51,7 @@
 //          initial release
 
 
-const std::string VERSION = "1.3.1";
+const std::string VERSION = "1.4.0";
 
 
 #endif

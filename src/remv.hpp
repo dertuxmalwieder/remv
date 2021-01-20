@@ -22,8 +22,8 @@
 #  define NAMESPACE_FILESYSTEM std::filesystem
 #endif
 
-#include <string>
 #include <regex>
+#include <string>
 
 #include "filestats.hpp"
 
@@ -37,9 +37,9 @@
 namespace fs = NAMESPACE_FILESYSTEM;
 
 
-FileStats perform_renames(fs::directory_entry iterator, std::regex needle, std::string replacements, int iLogLevel, bool bSkipExtensions, bool bRenameDirectories, bool bSimulate);
-FileStats traverse_haystack(std::string haystack, std::regex needle, std::string replacements, bool bSkipExtensions, bool bRecursive, int iLogLevel, bool bRenameDirectories, bool bSimulate);
-int rename_file(std::string in_path, std::string out_path, int iLogLevel);
+auto perform_renames(fs::directory_entry iterator, std::regex needle, std::string replacements, int iLogLevel, bool bSkipExtensions, bool bRenameDirectories, bool bSimulate) -> FileStats;
+auto traverse_haystack(std::string haystack, std::regex needle, std::string replacements, bool bSkipExtensions, bool bRecursive, int iLogLevel, bool bRenameDirectories, bool bSimulate) -> FileStats;
+auto rename_file(std::string in_path, std::string out_path, int iLogLevel) -> int;
 
 
 

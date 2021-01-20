@@ -1,3 +1,6 @@
+#ifndef HELP_HPP
+#define HELP_HPP
+
 /**
  * regex move: the help screens
  *
@@ -7,8 +10,8 @@
  */
 
 
-#include <iostream>
 #include "constants.hpp"
+#include <iostream>
 
 
 inline void show_usage() {
@@ -44,3 +47,5 @@ inline void show_version() {
     // Displays the current remv version.
     std::cout << std::endl << "This is remv version " << VERSION << "." << std::endl;
 }
+
+#endif

@@ -14,6 +14,10 @@
 
 // remv version (tries to follow the SemVer recommendations).
 // history:
+//   1.4.1  [2021-01-20]
+//          we use modern C++ now (auto ->)
+//          added include guards and rearranged some includes
+//
 //   1.4.0  [2020-10-28]
 //          relicensed as MIT-0 for the No Warranty clause
 //
@@ -51,7 +55,7 @@
 //          initial release
 
 
-const std::string VERSION = "1.4.0";
+const std::string VERSION = "1.4.1";
 
 
 #endif

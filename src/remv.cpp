@@ -9,18 +9,18 @@
 
 #include <iostream>
 #include <regex>
-#include <string>
 #include <sstream>
-#include <vector>
+#include <string>
 #include <system_error>
+#include <vector>
 
 #include "remv.hpp"
-#include "help.hpp"
 #include "constants.hpp"
 #include "filestats.hpp"
+#include "help.hpp"
 
 
-int main(int argc, char** argv) {
+auto main(int argc, char** argv) -> int {
     if (argc == 1 || argc > 5) {
         // This is guaranteed to have the wrong number of parameters...
         show_usage();
@@ -93,16 +93,15 @@ int main(int argc, char** argv) {
             show_version();
             return 0;
         }
-        else if (strncmp(argv[1], "-h", strlen(argv[1])) == 0) {
+        if (strncmp(argv[1], "-h", strlen(argv[1])) == 0) {
             // remv -h
             show_usage();
             return 0;
         }
-        else {
-            // remv <wrong param>
-            show_usage();
-            return 1;
-        }
+        
+        // remv <wrong param>
+        show_usage();
+        return 1;
     }
     else if (argc == 3) {
         // remv <in> <out>        
@@ -168,7 +167,7 @@ int main(int argc, char** argv) {
 }
 
 
-FileStats traverse_haystack(std::string haystack, std::regex needle, std::string replacements, bool bSkipExtensions, bool bRecursive, int iLogLevel, bool bRenameDirectories, bool bSimulate) {
+auto traverse_haystack(std::string haystack, std::regex needle, std::string replacements, bool bSkipExtensions, bool bRecursive, int iLogLevel, bool bRenameDirectories, bool bSimulate) -> FileStats {
     // Traverses through <haystack>, replacing <needle> by <replacements>.
     FileStats ret;
     FileStats this_round; // One per directory_item.
@@ -201,13 +200,13 @@ FileStats traverse_haystack(std::string haystack, std::regex needle, std::string
     return ret;
 }
 
-FileStats perform_renames(fs::directory_entry iterator, std::regex needle, std::string replacements, int iLogLevel, bool bSkipExtensions, bool bRenameDirectories, bool bSimulate) {
+auto perform_renames(fs::directory_entry iterator, std::regex needle, std::string replacements, int iLogLevel, bool bSkipExtensions, bool bRenameDirectories, bool bSimulate) -> FileStats {
     FileStats ret;
     if (fs::is_regular_file(iterator) || (bRenameDirectories && fs::is_directory(iterator))) {
         // <iterator> is either a regular file or a directory and we want to
         // process it according to our <in_regex>.
         std::smatch match;
-        std::string old_extension;
+        std::string old_extension = "";
         
         std::stringstream parent_path_stream;
         std::stringstream out_path_stream;
@@ -312,7 +311,7 @@ FileStats perform_renames(fs::directory_entry iterator, std::regex needle, std::
 }
 
 
-int rename_file(std::string in_path, std::string out_path, int iLogLevel) {
+auto rename_file(std::string in_path, std::string out_path, int iLogLevel) -> int {
     // Does the actual renaming.
     std::error_code err;
     fs::path in(in_path);

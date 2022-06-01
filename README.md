@@ -18,9 +18,9 @@ If you think this is handy, please seek help.
 
 Get `remv` from the [Fossil repository](https://code.rosaelefanten.org/remv) or on whichever mirror you read this.
 
-Grab `clang` for your OS (we need C++17), then:
+Grab `clang` for your OS (we expect C++20 or newer), then:
 
-    clang src/remv.cpp
+    clang -std=c++20 src/remv.cpp
 
 Or, on Windows:
 
@@ -40,6 +40,7 @@ Enjoy.
             -d      Also rename directories on the way.
             -s      Sets the start directory to the last parameter;
                     else, remv will start in '.'.
+            -f      Only replaces the first occurrence in each name.
             -v      Verbose logging.
             -vv     Very verbose logging.
             -n      Dry run - don't modify anything just yet.

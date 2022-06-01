@@ -9,12 +9,11 @@
  * details.
  */
 
-
 #include "constants.hpp"
 #include <iostream>
 
-
-inline void show_usage() {
+inline void show_usage()
+{
     // Displays the usage.
     std::cout << std::endl;
     std::cout << " This is remv - move files using regular expressions." << std::endl;
@@ -29,6 +28,7 @@ inline void show_usage() {
     std::cout << "\t-d\tAlso rename directories on the way." << std::endl;
     std::cout << "\t-s\tSets the start directory to the last parameter;" << std::endl;
     std::cout << "\t\telse, remv will start in '.'." << std::endl;
+    std::cout << "\t-f\tOnly replaces the first occurrence in each name." << std::endl;
     std::cout << "\t-v\tVerbose logging." << std::endl;
     std::cout << "\t-vv\tVery verbose logging." << std::endl;
     std::cout << "\t-n\tDry run - don't modify anything just yet." << std::endl;
@@ -42,8 +42,8 @@ inline void show_usage() {
     std::cout << std::endl;
 }
 
-
-inline void show_version() {
+inline void show_version()
+{
     // Displays the current remv version.
     std::cout << std::endl << "This is remv version " << VERSION << "." << std::endl;
 }

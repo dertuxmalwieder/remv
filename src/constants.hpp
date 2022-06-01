@@ -6,7 +6,6 @@
  * details.
  */
 
-
 #ifndef REMV_CONST
 #define REMV_CONST
 
@@ -14,6 +13,10 @@
 
 // remv version (tries to follow the SemVer recommendations).
 // history:
+//   2.0.0  [2022-06-01]
+//          added a flag to replace only the first occurrence
+//          API breakage: passing a struct params now
+//
 //   1.4.1  [2021-01-20]
 //          we use modern C++ now (auto ->)
 //          added include guards and rearranged some includes
@@ -54,8 +57,6 @@
 //   1.0.0  [2018-01-13]
 //          initial release
 
-
-const std::string VERSION = "1.4.1";
-
+const std::string VERSION = "2.0.0";
 
 #endif

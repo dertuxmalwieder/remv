@@ -6,23 +6,22 @@
  * details.
  */
 
-
 #ifndef FILESTATS_HPP
 #define FILESTATS_HPP
 
-
-class FileStats {
-public:
+class FileStats
+{
+  public:
     int success;
     int failed;
     int skipped;
 
-    FileStats() {
+    FileStats()
+    {
         success = 0;
         failed = 0;
         skipped = 0;
     }
 };
-
 
 #endif
